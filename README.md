@@ -1,16 +1,48 @@
-# React + Vite
+# FUNFOREE - Sistema Médico
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+FUNFOREE es una aplicación web moderna para la gestión clínica y administrativa de un centro médico. Permite organizar pacientes, citas, medicamentos, tratamientos, laboratorios, reportes y usuarios desde una interfaz limpia, profesional y fácil de usar.
 
-Currently, two official plugins are available:
+## ✨ Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Gestión de pacientes y expedientes
+- Programación y seguimiento de citas
+- Control de medicamentos e inventario
+- Registro de tratamientos y episodios
+- Gestión de laboratorios y reportes
+- Autenticación de usuarios y acceso por roles
 
-## React Compiler
+## 🛠️ Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + Vite
+- Material UI
+- Firebase Authentication, Firestore y Storage
+- React Router
 
-## Expanding the Oxlint configuration
+## 📋 Requisitos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Node.js 18 o superior
+- npm
+
+## 🚀 Instalación
+
+1. Clona el repositorio
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia la aplicación:
+   ```bash
+   npm run dev
+   ```
+
+## 🏗️ Construcción para producción
+
+Para generar una versión lista para producción:
+
+```bash
+npm run build
+```
+
+## 📌 Nota
+
+Este proyecto fue creado como una solución funcional y visualmente organizada para un sistema médico digital, con enfoque en usabilidad, claridad y experiencia de usuario.
