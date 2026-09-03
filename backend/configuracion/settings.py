@@ -43,6 +43,29 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
+# ============================================================
+# SEGURIDAD HTTP
+# ============================================================
+
+if ENVIRONMENT in ["TEST", "PRE", "PROD"]:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = "DENY"
+else:
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_HSTS_SECONDS = 0
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    SECURE_HSTS_PRELOAD = False
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = "DENY"
+
 
 # ============================================================
 # APPLICATIONS
@@ -55,6 +78,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # JWT - lista negra de refresh tokens
+    "rest_framework_simplejwt.token_blacklist",
 
     # Django REST Framework
     "rest_framework",
@@ -213,11 +239,8 @@ SIMPLE_JWT = {
     # Refresh token válido durante 1 día
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 
-    # Renovación del refresh token
     "ROTATE_REFRESH_TOKENS": True,
-
-    # La lista negra se configurará posteriormente
-    "BLACKLIST_AFTER_ROTATION": False,
+    "BLACKLIST_AFTER_ROTATION": True,
 }
 
 

@@ -6,6 +6,7 @@ from drf_spectacular.views import (
 )
 
 from rest_framework_simplejwt.views import (
+    TokenBlacklistView,
     TokenObtainPairView,
     TokenRefreshView,
 )
@@ -31,6 +32,12 @@ urlpatterns = [
         "api/v1/auth/token/refresh/",
         TokenRefreshView.as_view(),
         name="token_refresh",
+    ),
+
+    path(
+        "api/v1/auth/token/blacklist/",
+        TokenBlacklistView.as_view(),
+        name="token_blacklist",
     ),
 
     # Esquema OpenAPI
