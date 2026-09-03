@@ -35,6 +35,7 @@ if not SECRET_KEY:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+ENVIRONMENT = os.getenv("ENVIRONMENT", "DEV")
 
 ALLOWED_HOSTS = [
     host.strip()
